@@ -22,6 +22,5 @@ export const dataParser = (result) => {
             )
         }
 
-    
-    console.log(raceModel)
+    return(raceModel)
 }
