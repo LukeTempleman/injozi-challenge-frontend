@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { getAllSeasonWinners } from "./api-requests/requests";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useRef} from "react";
 import { AccordionContainer, AccordionContent } from "./components/Accordion";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -37,21 +37,32 @@ const Accordion = ({ items }) => {
 
 function App() {
   const [seasonList, setSeasonList] = useState([]);
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
 
   useEffect(() => {
     const fetchData = async () => {
       let seasonWinners = await getAllSeasonWinners();
       setSeasonList(seasonWinners);
-    };
+      
 
+    };
     fetchData();
+
+    function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    
+}
+    window.addEventListener('resize', handleResize)
+
   }, []);
 
   let items = [
-    {
-      name: "header 1",
-      content: <div>yeeetus</div>,
-    },
   ];
   console.log(seasonList);
 
@@ -79,7 +90,7 @@ function App() {
       content: (
         <div>
           <TableContainer>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={{ width: (dimensions.width/1.5)}} aria-label="simple table">
               <TableHead>
               <TableRow>
               <TableCell style={{ color: 'white' }}>Driver</TableCell>
@@ -105,20 +116,44 @@ function App() {
             </Table>
           </TableContainer>
         </div>
-      ), //table here}
+      ),
     };
     items.push(item);
   });
 
+  const ref = useRef(null);
+
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  };
+
   return (
     <div>
-      <div
+      <div className='max-w-[800px] mt-[-98px] w-full h-screen mx-auto text-center flex flex-col justify-center relative z-10'>
+        {/* Your hero page content */}
+        <p className='flex justify-center text-[#CD104D] font-bold p-2'>
+          Injozi Front-End challenge
+        </p>
+        <h1 className='flex justify-center md:text-7xl sm:text-6xl text-4xl font-bold md:py-6'>
+          F1 Seasonal Winner List 
+        </h1>
+        <p className='flex justify-center md:text-5xl sm:text-4xl text-xl font-bold py-4 text-[#00df9a]'>
+          Find out important info about previous races 
+        </p>
+      
+        <button onClick={handleClick} className='bg-[#CD104D] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>
+          Get Started
+        </button>
+      </div>
+    
+
+      <div ref={ref}
         style={{
           width: "100vw",
           height: "100vh",
           display: "grid",
           placeItems: "center",
-          backgroundColor: "#0a0a0a",
         }}
       >
         <Accordion items={items}></Accordion>

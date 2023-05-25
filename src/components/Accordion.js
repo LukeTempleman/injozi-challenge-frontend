@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+
+
 const AccordionContainer = styled.div`
-  overflow: hidden;
-  width: 50.75rem;
-  border-radius: 0.5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 73%;
+  border-radius: 0.7rem;
   background-color: #27262c;
   color: #f9f9f9;
+  height: 50.75rem
 `;
 
 const Inner = styled.div`
