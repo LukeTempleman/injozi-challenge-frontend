@@ -32,3 +32,7 @@ Used variations of tailwind, material ui and styled-components to show my knowle
 
 ## conclusion 
 This was a pretty fun and engaging challenge, as im writing this im starting the backend challenge 😆
+
+
+![image](https://github.com/LukeTempleman/injozi-challenge-frontend/assets/72209314/fbc00474-4164-4ece-949a-12359097f987)
+![image](https://github.com/LukeTempleman/injozi-challenge-frontend/assets/72209314/76ffbb6f-57d9-47c0-a36b-e7d6688808ca)
