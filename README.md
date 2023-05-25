@@ -24,6 +24,8 @@ Here is my iteration of the front end challenge
 simply run the docker container on port 3000 and npm run start
 then head over to your local browser and head to this url http://localhost:3000/
 
+## notes
+Used variations of tailwind, material ui and styled-components to show my knowledge and understanding of front-end
 
 ## conclusion 
 This was a pretty fun and engaging challenge, as im writing this im starting the backend challenge 😆
