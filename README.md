@@ -14,7 +14,7 @@ Here is my iteration of the front end challenge
 
 5)Single page application ✔️
 
-6) Highlight the row of the champion that won that season ❎
+6)Highlight the row of the champion that won that season ❎
 (90% complete but am sticking true to the 48 hour rule , also so i can get started on the backend challenge 👀)
 
 
