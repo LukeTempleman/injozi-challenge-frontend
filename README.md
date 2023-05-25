@@ -20,6 +20,9 @@ Here is my iteration of the front end challenge
 
 
 ## setup instructions 🧰
+cd // into the directory where the docker file is //
+docker build -t injozi-challenge-frontend .    
+docker run -p 3000:3000 injozi-challenge-frontend
 
 simply run the docker container on port 3000 and npm run start
 then head over to your local browser and head to this url http://localhost:3000/
