@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
-
 const AccordionContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
@@ -48,6 +46,7 @@ const Content = styled.div`
   transition: height 0.35s;
 `;
 
+//The JSX needed to produce our table for the seasons
 const AccordionContent = ({ onClick, itemName, itemContent, isActive }) => {
   return (
     <React.Fragment>
